@@ -2,7 +2,7 @@ module Event
   def sendEvent(eventName, metadata)
     wilcoId = ENV['WILCO_ID'] || File.read(Rails.root.join("../.wilco"))
     conn = Faraday.new(
-      url: "https://engine.wilco.gg/users/#{wilcoId}/",
+      url: "http://localhost:3002/users/#{wilcoId}/",
       headers: {'Content-Type' => 'application/json'}
     )
 
